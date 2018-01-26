@@ -17,7 +17,7 @@ The following is a list of open research problems that the Tendermint team is in
 * Cryptographic Sortition
     * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate each block.
     * Would need a secure randomness beacon that is deterministic but unpredictable.
-* BFT Time
+* BFT Time (in progress) 
 * Alternatives to Stake for determining validator weight for public systems
     * Proof of Useful Work / Storage?
 * Novel proposal mechanisms for Tendermint consensus (alternatives to round robin proposer)
