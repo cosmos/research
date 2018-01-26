@@ -13,7 +13,7 @@ The following is a list of open research problems that the Tendermint team is in
 
 ### Tendermint Consensus
 * Pipelined Tendermint
-    * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimisiticallty** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
+    * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Cryptographic Sortition
     * Instead of requiring every validator to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate each block.
     * Would need a secure randomness beacon that is deterministic but unpredictable.
