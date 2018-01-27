@@ -8,14 +8,14 @@ The following is a list of open research problems that the Tendermint team is in
     * Can we aggregate signatures during the gossip in the core layer?
 * Using BLS singatures on transactions to aggregate signatures in a block
 * Tradeoffs of different post-quantum signature schemes
-* Recovery mechanism for breaking of non quantum-resistant signatures like BLS (what do we do when quantum signatures are broken??)
+* Recovery mechanism for dealing with the breaking of non quantum-resistant signatures like BLS
 
 
 ### Tendermint Consensus
 * Pipelined Tendermint
     * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Cryptographic Sortition
-    * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate each block.
+    * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate a specific block.
     * Would need a secure randomness beacon that is deterministic but unpredictable.
 * BFT Time (in progress) 
 * Alternatives to Stake for determining validator weight for public systems
