@@ -13,11 +13,11 @@ The following is a list of open research problems that the Tendermint team is in
 
 ### Tendermint Consensus
 * Pipelined Tendermint
-    * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
+    * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two Tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Cryptographic Sortition
     * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate a specific block.
     * Would need a secure randomness beacon that is deterministic but unpredictable.
-* BFT Time (in progress) 
+* BFT Time (in progress)
 * Alternatives to Stake for determining validator weight for public systems
     * Proof of Useful Work / Storage?
 * Novel proposal mechanisms for Tendermint consensus (alternatives to round robin proposer)
@@ -25,27 +25,27 @@ The following is a list of open research problems that the Tendermint team is in
         * PoW Nakamoto chain (Casper FFG)
         * PoS Nakamoto Chain (Snow White, Ouroboros Praos, etc)
     * Tendermint-NG (Apply ideas from Bitcoin-NG to Tendermint)
-    * P2P Communication DAG (hashgraph-like?) as proposal mechanism into Tendermint for in-block ordering 
+    * P2P Communication DAG (hashgraph-like?) as proposal mechanism into Tendermint for in-block ordering
 * Formal verification of Tendermint consensus
 * Performance testing at scale of Tendermint consensus engines
 * Model Tendermint in reference to other more abstract consensus algorithms
     * Modeling Tendermint as parameterization of Casper CBC
     * Tendermint as instantiation of Stellar Federated Byzantine Agreement
-    
-    
+
+
 ### ABCI
 * Building other ABCI consensus engines
-    * Currently Tendermint Core is the only consensus engine that matches the ABCI interface spec. Can we create implementations of other consensus protocols such as Casper CBC and HoneyBadger BFT to also fit the ABCI interface, so blockchain developers can choose which consensus engine to use for their application.
+    * Currently Tendermint Core is the only consensus engine that matches the ABCI interface spec. Can we create implementations of other consensus protocols such as Casper CBC and HoneyBadger BFT to also fit the ABCI interface, so blockchain developers can choose which consensus engine to use for their application?
 * Creating ABCI interface for p2p layer
-    * How the ABCI creates an abstraction between the blockchain application and the consensus layer, can we create a similar abstraction between the consensus and peer to peer layers.  This will allow blockchains to choose their preferred gossip protocol or networking stack.
+    * The ABCI creates an abstraction between the blockchain application and the consensus layer. Can we create a similar abstraction between the consensus and peer to peer layers.  This will allow blockchains to choose their preferred gossip protocol or networking stack.
 
-    
+
 ### Cosmos SDK
 * Dependency-based Partial Ordering of Transactions in block rather that total global ordering
     * Optimize software to take advance of GPUs/multicore CPUs/parallel threading?
-* Self-executing transactions (transcation waiting in mempool for time or state boolean)
+* Self-executing transactions (transaction waiting in mempool for time or state boolean)
 * Address serialization
-    * Bech32?
+    * [Bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)?
 * Privacy features?
 * Implementing existing applications/VMs as Cosmos Modules or ABCI Apps
     * Chainmint (Chain.com's Bitcoin-like VM)
@@ -58,7 +58,7 @@ The following is a list of open research problems that the Tendermint team is in
 * Send Non Fungible Asset/Token Transfer over IBC
 * Modeling IBC in capability approach modeling of interchain communication and transfers
 * Integrating IBC into other platforms
-    * Integrating IBC natively into post-Casper Ethereum and other systemns with finality
+    * Integrating IBC natively into post-Casper Ethereum and other systems with finality
     * Tooling to easily add IBC support into non Cosmos SDK based ABCI apps
     * Peg Zones
         * EVM (Ethereum, Ethereum Classic, etc) Peg Zones (In Progress)
@@ -67,7 +67,7 @@ The following is a list of open research problems that the Tendermint team is in
 * Private Chains
     * Wrapper around traditional systems to treat them as a "1-validator blockchain"
     * Tooling for using private blockchains as data oracles for public systems
-    
+
 
 ### Multichain Security Models
 * Fraud Proofs of invalid state transitions on other chains
@@ -75,7 +75,7 @@ The following is a list of open research problems that the Tendermint team is in
 * Hosted Consensus Model
     * Model scalability of this model
     * Sharding
-        * Allowing different subsets of Cosmos Hub validator set to operate different hosted chains but have fraud proof proof submission to entire validators set 
+        * Allowing different subsets of Cosmos Hub validator set to operate different hosted chains but have fraud proof proof submission to entire validators set
 * Plasma
     * Implementation of Plasma security model into Cosmos Hub to offer chains as an optional alternative model to sovereign and hosted consensus
 * Model different multi-chain/shard models using Stellar Federated Byzantine Models
@@ -83,7 +83,7 @@ The following is a list of open research problems that the Tendermint team is in
 
 ### Proof of Stake and Economics (Staking and Slashing)
 * Can we allow for delegators to instantly rebond to a different validator without going through unbonding period?
-* Tradeoffs in slashing conditions to punish byzantine behavior but not disincentivize participation 
+* Tradeoffs in slashing conditions to punish byzantine behavior but not disincentivize participation
 * Cartelization and Censorship Resistance
     * What are the tradeoffs in methods for dealing with unattributable faults such as validator availability?
     * How can we increase coordination cost for cartels?
@@ -121,11 +121,11 @@ The following is a list of open research problems that the Tendermint team is in
 
 
 ### Secure Validators
-* Techinques for maintatining uptime and DDOS Protection
+* Techniques for maintaining uptime and DDOS Protection
 * "Smart HSMs" and Trusted hardware (SGX)
 
 
-### Miscellaneuous
+### Miscellaneous
 * Cross-chain identity
 * Proof of Computation
     * Zk-snarks, TrueBit, Multiparty computation
