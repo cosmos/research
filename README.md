@@ -108,12 +108,12 @@ The following is a list of open research problems that the Tendermint team is in
 * Optimal Off-chain communication mediums
 * Best practices for software update hard forks
 * Impacts of novel experimental governance mechanisms
-    * Futarchy?  Liquid Democracy?
+    * [Futarchy](https://blog.ethereum.org/2014/08/21/introduction-futarchy/)?  [Liquid Democracy](https://www.youtube.com/watch?v=fg0_Vhldz-8)?
 
 
 ### Next Generation Blockchain VMs
 * UTXO-based smart contracting systems
-    * [Smart Signatures] (https://www.slideshare.net/ChristopherA/smart-signaturesexperiments-in-authentication-stanford-bpase-2018-final)
+    * [Smart Signatures](https://www.slideshare.net/ChristopherA/smart-signaturesexperiments-in-authentication-stanford-bpase-2018-final)
     * Excecution in zero-knowledge?
 * WebAssembly-based VMs
 * Formal Verification
@@ -130,5 +130,5 @@ The following is a list of open research problems that the Tendermint team is in
 * Proof of Computation
     * Zk-snarks, TrueBit, Multiparty computation
 * Real World Economics
-    * [Local Currencies as an alternative to UBI] (https://twitter.com/buchmanster/status/897188296354385920)
+    * [Local Currencies as an alternative to UBI](https://twitter.com/buchmanster/status/897188296354385920)
     * Integration with central banks
