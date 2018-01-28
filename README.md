@@ -130,5 +130,5 @@ The following is a list of open research problems that the Tendermint team is in
 * Proof of Computation
     * Zk-snarks, TrueBit, Multiparty computation
 * Real World Economics
-      * [Local Currencies as an alternative to UBI] (https://twitter.com/buchmanster/status/897188296354385920)
-      * Integration with central banks
+    * [Local Currencies as an alternative to UBI] (https://twitter.com/buchmanster/status/897188296354385920)
+    * Integration with central banks
