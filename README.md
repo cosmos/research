@@ -61,8 +61,8 @@ The following is a list of open research problems that the Tendermint team is in
     * Integrating IBC natively into post-Casper Ethereum and other systemns with finality
     * Tooling to easily add IBC support into non Cosmos SDK based ABCI apps
     * Peg Zones
-        * EVM (Ethereum, Ethereum Classic) Peg Zones (In Progress)
-        * Bitcoin and Bitcoin-like Peg Zones
+        * EVM (Ethereum, Ethereum Classic, etc) Peg Zones (In Progress)
+        * Bitcoin and Bitcoin-like (Litecoin, ZCash, etc) Peg Zones
     * Use of IBC for Ethereum Plasma
 * Private Chains
     * Wrapper around traditional systems to treat them as a "1-validator blockchain"
@@ -73,13 +73,11 @@ The following is a list of open research problems that the Tendermint team is in
 * Fraud Proofs of invalid state transitions on other chains
 * What is proper mechanism for dealing with forks in other sovereign chains?
 * Hosted Consensus Model
-    * All Cosmos Hub validators operate hosted chains, but this can be done in parallel rather than in sequence.
     * Model scalability of this model
     * Sharding
         * Allowing different subsets of Cosmos Hub validator set to operate different hosted chains but have fraud proof proof submission to entire validators set 
 * Plasma
-    * Implementation of Plasma security into IBC to offer chains as an optional model
-    * Chain is operated by its own validators, but users and validators can avoid censorship by escaping on parent chain
+    * Implementation of Plasma security model into Cosmos Hub to offer chains as an optional alternative model to sovereign and hosted consensus
 * Model different multi-chain/shard models using Stellar Federated Byzantine Models
 
 
