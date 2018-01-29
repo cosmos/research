@@ -12,22 +12,21 @@ The following is a list of open research problems that the Tendermint team is in
 
 
 ### Tendermint Consensus
-* Pipelined Tendermint
-    * Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
-* Cryptographic Sortition
-    * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate a specific block.
-    * Would need a secure randomness beacon that is deterministic but unpredictable.
-* BFT Time (in progress) 
-* Alternatives to Stake for determining validator weight for public systems
-    * Proof of Useful Work / Storage?
+* BFT Time (in progress)
 * Novel proposal mechanisms for Tendermint consensus (alternatives to round robin proposer)
+    * [Tx Pre-Sequencing](https://github.com/tendermint/tendermint/issues/1168)
     * Nakamoto consensus chain as proposal mechanism
         * PoW Nakamoto chain (Casper FFG)
         * PoS Nakamoto Chain (Snow White, Ouroboros Praos, etc)
-    * Tendermint-NG (Apply ideas from Bitcoin-NG to Tendermint)
-    * P2P Communication DAG (hashgraph-like?) as proposal mechanism into Tendermint for in-block ordering 
+    * P2P Communication DAG (hashgraph-like?) as proposal mechanism into Tendermint for in-block ordering
 * Formal verification of Tendermint consensus
 * Performance testing at scale of Tendermint consensus engines
+* Cryptographic Sortition
+    * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate a specific block.
+    * Would need a secure randomness beacon that is deterministic but unpredictable.
+* Alternatives to Stake for determining validator weight for public systems
+    * Proof of Useful Work / Storage?
+* Pipelined Tendermint - Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Model Tendermint in reference to other more abstract consensus algorithms
     * Modeling Tendermint as parameterization of Casper CBC
     * Tendermint as instantiation of Stellar Federated Byzantine Agreement
