@@ -44,7 +44,7 @@ The following is a list of open research problems that the Tendermint team is in
     * Optimize software to take advance of GPUs/multicore CPUs/parallel threading?
 * Self-executing transactions (transcation waiting in mempool for time or state boolean)
 * Address serialization
-    * Bech32?
+    * Bech32 (in progress)
 * Privacy features?
 * Implementing existing applications/VMs as Cosmos Modules or ABCI Apps
     * Chainmint (Chain.com's Bitcoin-like VM)
