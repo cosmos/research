@@ -12,7 +12,7 @@ The following is a list of open research problems that the Tendermint team is in
 
 
 ### Tendermint Consensus
-* BFT Time (in progress)
+* BFT Time [[in progress](https://github.com/tendermint/tendermint/issues/1146)]
 * Novel proposal mechanisms for Tendermint consensus (alternatives to round robin proposer)
     * [Tx Pre-Sequencing](https://github.com/tendermint/tendermint/issues/1168)
     * Nakamoto consensus chain as proposal mechanism
@@ -44,13 +44,13 @@ The following is a list of open research problems that the Tendermint team is in
     * Optimize software to take advance of GPUs/multicore CPUs/parallel threading?
 * Self-executing transactions (transcation waiting in mempool for time or state boolean)
 * Address serialization
-    * Bech32 [in progress]
+    * Bech32 [[in progress](https://github.com/tendermint/go-crypto/pull/66)]
 * Privacy features?
 * Implementing existing applications/VMs as Cosmos Modules (or ABCI Apps)
     * Chainmint (Chain.com's Bitcoin-like VM)
     * ZCash
     * WASM VM
-    * EVM (Ethermint) [in progress]
+    * EVM (Ethermint 2.0) [[in progress](https://github.com/cosmos/cosmos-sdk/tree/feature/sdk2-evm)]
 
 
 ### Inter Blockchain Communication (IBC)
