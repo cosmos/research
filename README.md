@@ -44,11 +44,13 @@ The following is a list of open research problems that the Tendermint team is in
     * Optimize software to take advance of GPUs/multicore CPUs/parallel threading?
 * Self-executing transactions (transcation waiting in mempool for time or state boolean)
 * Address serialization
-    * Bech32 (in progress)
+    * Bech32 [in progress]
 * Privacy features?
-* Implementing existing applications/VMs as Cosmos Modules or ABCI Apps
+* Implementing existing applications/VMs as Cosmos Modules (or ABCI Apps)
     * Chainmint (Chain.com's Bitcoin-like VM)
     * ZCash
+    * WASM VM
+    * EVM (Ethermint) [in progress]
 
 
 ### Inter Blockchain Communication (IBC)
@@ -60,7 +62,7 @@ The following is a list of open research problems that the Tendermint team is in
     * Integrating IBC natively into post-Casper Ethereum and other systemns with finality
     * Tooling to easily add IBC support into non Cosmos SDK based ABCI apps
     * Peg Zones
-        * EVM (Ethereum, Ethereum Classic, etc) Peg Zones (In Progress)
+        * EVM (Ethereum, Ethereum Classic, etc) Peg Zones [in Progress]
         * Bitcoin and Bitcoin-like (Litecoin, ZCash, etc) Peg Zones
     * Use of IBC for Ethereum Plasma
 * Private Chains
