@@ -29,7 +29,6 @@ The following is a list of open research problems that the Tendermint team is in
 * Pipelined Tendermint - Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Model Tendermint in reference to other more abstract consensus algorithms
     * Modeling Tendermint as parameterization of Casper CBC
-    * Tendermint as instantiation of Stellar Federated Byzantine Agreement
     
     
 ### ABCI
