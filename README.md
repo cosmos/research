@@ -6,7 +6,7 @@ The following is a list of open research problems that the Tendermint team is in
 ### Advanced signature schemes
 * Using BLS or Shnorr signatures for Tendermint signing
     * Can we aggregate signatures during the gossip in the core layer?
-* Using BLS singatures on transactions to aggregate signatures in a block
+* Using BLS signatures on transactions to aggregate signatures in a block
 * Tradeoffs of different post-quantum signature schemes
 * Recovery mechanism for dealing with the breaking of non quantum-resistant signatures like BLS
 
@@ -42,6 +42,7 @@ The following is a list of open research problems that the Tendermint team is in
 * Dependency-based Partial Ordering of Transactions in block rather that total global ordering
     * Optimize software to take advance of GPUs/multicore CPUs/parallel threading?
 * Self-executing transactions (transcation waiting in mempool for time or state boolean)
+    * Another way to do this: a transaction can specify a future transaction that must be attempted at a future block, changing the consensus ruleset to require that the future transaction be attempted at that block
 * Address serialization
     * Bech32 [[in progress](https://github.com/tendermint/go-crypto/pull/66)]
 * Privacy features?
@@ -67,7 +68,16 @@ The following is a list of open research problems that the Tendermint team is in
 * Private Chains
     * Wrapper around traditional systems to treat them as a "1-validator blockchain"
     * Tooling for using private blockchains as data oracles for public systems
-    
+* Zero-knowledge IBC
+    * Cross-chain asset transfers with no information revealed
+    * Could obscure routing to mitigate inference from metadata (so observer can't figure out which two chains exchanged assets)
+* IBC as a compiler target
+    * Smart contract language exposing IBC abstractions (connection, channel) as language primitives
+    * Deployed contracts target a set (not necessarily fixed-size) of blockchains running IBC & common VMs, scaling automatic & developer-transparent
+* Byzantine recovery strategies
+    * Plasma-like fraud proofs to recover assets on original chain (or any chain, potentially)
+    * Automatic Byzantine recovery? Would require exact fraud proofs, but could possibly allow security of IBC-defined assets to be 1-of-n chains
+
 
 ### Multichain Security Models
 * Fraud Proofs of invalid state transitions on other chains
@@ -118,6 +128,14 @@ The following is a list of open research problems that the Tendermint team is in
 * WebAssembly-based VMs
 * Formal Verification
 * Measuring effects of performance differences between VMs on scalability  
+* Typesystem-defined VMs
+    * Instead of defining instruction execution semantics, consensus rules define high-level language and symbolic execution rules (no machine types)
+    * Typechecker included in consensus ruleset
+    * Consensus rules define formal semantics, consensus state defines evaluation model
+    * *Anyone* can submit a transaction changing the evaluation semantics - if they still obey the symbolic execution rules & are more efficient, consensus rules are changed and the user gets paid
+* Lock-free optimistic concurrency
+    * STM-like - https://en.wikipedia.org/wiki/Software_transactional_memory - works kinda like PostgreSQL MVCC
+    * As long as the *output* is determistic (linearizable), order-of-evaluation can vary across nodes
 
 
 ### Secure Validators
@@ -132,3 +150,9 @@ The following is a list of open research problems that the Tendermint team is in
 * Real World Economics
     * [Local Currencies as an alternative to UBI](https://twitter.com/buchmanster/status/897188296354385920)
     * Integration with central banks
+
+
+### Long-term
+* Distributed ledger network infrastructure across non-trivial lightspeed delays
+    * Settlement of Earth <=> Mars colony transactions, neither wants to trust the other
+    * Higher-value slower chains with validators in both locations, lower-value faster chains in concentrated localities?
