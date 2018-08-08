@@ -4,29 +4,29 @@ The following is a list of open research problems that the Tendermint team is in
 
 
 ### Advanced signature schemes
-* Using BLS or Shnorr signatures for Tendermint signing
-    * Can we aggregate signatures during the gossip in the core layer?
+* Using BLS signatures for Tendermint signing
+    * Aggregate signatures during the gossip in the core layer
 * Using BLS signatures on transactions to aggregate signatures in a block
-* Tradeoffs of different post-quantum signature schemes
 * Recovery mechanism for dealing with the breaking of non quantum-resistant signatures like BLS
+   * Automatic fallback to post-quantum signature schemes (requires everyone to submit a fallback key on chain)
 
 
 ### Tendermint Consensus
-* BFT Time [[in progress](https://github.com/tendermint/tendermint/issues/1146)]
+* Formal verification of Tendermint consensus [[complete](https://arxiv.org/abs/1807.04938)]
+* BFT Time [[in progress](https://github.com/tendermint/tendermint/blob/master/docs/spec/consensus/bft-time.md)]
+* Pipelined Tendermint - Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Novel proposal mechanisms for Tendermint consensus (alternatives to round robin proposer)
     * [Tx Pre-Sequencing](https://github.com/tendermint/tendermint/issues/1168)
     * Nakamoto consensus chain as proposal mechanism
         * PoW Nakamoto chain (Casper FFG)
         * PoS Nakamoto Chain (Snow White, Ouroboros Praos, etc)
     * P2P Communication DAG (hashgraph-like?) as proposal mechanism into Tendermint for in-block ordering
-* Formal verification of Tendermint consensus
 * Performance testing at scale of Tendermint consensus engines
 * Cryptographic Sortition
     * Instead of requiring the entire validator set to validate every single block, can we randomly select a subset of the validators (for example randomly select 100 out of total set of 10000) to validate a specific block.
     * Would need a secure randomness beacon that is deterministic but unpredictable.
 * Alternatives to Stake for determining validator weight for public systems
     * Proof of Useful Work / Storage?
-* Pipelined Tendermint - Tendermint currently uses two round trips of "voting" (pre-votes and pre-commits) in order to achieve byzantine fault tolerance. Can we **optimistically** "pipeline" two tendermint blocks by using the pre-vote for the next block as the pre-commit for the previous block.
 * Model Tendermint in reference to other more abstract consensus algorithms
     * Modeling Tendermint as parameterization of Casper CBC
     
@@ -36,6 +36,7 @@ The following is a list of open research problems that the Tendermint team is in
     * Currently Tendermint Core is the only consensus engine that matches the ABCI interface spec. Can we create implementations of other consensus protocols such as Casper CBC and HoneyBadger BFT to also fit the ABCI interface, so blockchain developers can choose which consensus engine to use for their application.
 * Creating ABCI interface for p2p layer
     * How the ABCI creates an abstraction between the blockchain application and the consensus layer, can we create a similar abstraction between the consensus and peer to peer layers.  This will allow blockchains to choose their preferred gossip protocol or networking stack.
+    * Look into [[libp2p](https://github.com/libp2p)]
 
     
 ### Cosmos SDK
@@ -44,16 +45,18 @@ The following is a list of open research problems that the Tendermint team is in
 * Self-executing transactions (transcation waiting in mempool for time or state boolean)
     * Another way to do this: a transaction can specify a future transaction that must be attempted at a future block, changing the consensus ruleset to require that the future transaction be attempted at that block
 * Address serialization
-    * Bech32 [[in progress](https://github.com/tendermint/go-crypto/pull/66)]
+    * Bech32 [[complete](https://github.com/cosmos/cosmos-sdk/blob/develop/docs/spec/other/bech32.md)]
 * Privacy features?
 * Implementing existing applications/VMs as Cosmos Modules (or ABCI Apps)
-    * Chainmint (Chain.com's Bitcoin-like VM)
+    * EVM (Ethermint 2.0) [[in progress](https://github.com/cosmos/ethermint)]
+    * Chainmint (Chain.com's Bitcoin-like VM) [[in progress](https://github.com/chainx-org/chainmint)]
     * ZCash
-    * WASM VM
-    * EVM (Ethermint 2.0) [[in progress](https://github.com/cosmos/cosmos-sdk/tree/feature/sdk2-evm)]
+    * Primea
 
 
 ### Inter Blockchain Communication (IBC)
+* Pay for the fees on another zone using payment channel transfers on the hub
+   * Payment channel settlement is dependant on IBC proofs of the transaction being inserted in the zone.
 * Multi-hop IBC transfers (no needing user input between hops)
 * Cross-Chain asynchronous Smart Contract Calls over IBC
 * Send Non Fungible Asset/Token Transfer over IBC
@@ -62,7 +65,7 @@ The following is a list of open research problems that the Tendermint team is in
     * Integrating IBC natively into post-Casper Ethereum and other systemns with finality
     * Tooling to easily add IBC support into non Cosmos SDK based ABCI apps
     * Peg Zones
-        * EVM (Ethereum, Ethereum Classic, etc) Peg Zones [in Progress]
+        * EVM (Ethereum, Ethereum Classic, etc) Peg Zones [[in Progress](https://github.com/cosmos/peggy/)]
         * Bitcoin and Bitcoin-like (Litecoin, ZCash, etc) Peg Zones
     * Use of IBC for Ethereum Plasma
 * Private Chains
@@ -92,7 +95,7 @@ The following is a list of open research problems that the Tendermint team is in
 
 
 ### Proof of Stake and Economics (Staking and Slashing)
-* Can we allow for delegators to instantly rebond to a different validator without going through unbonding period?
+* Can we allow for delegators to instantly rebond to a different validator without going through unbonding period? [[in progress](https://github.com/cosmos/cosmos-sdk/tree/develop/x/stake)]
 * Tradeoffs in slashing conditions to punish byzantine behavior but not disincentivize participation 
 * Cartelization and Censorship Resistance
     * What are the tradeoffs in methods for dealing with unattributable faults such as validator availability?
