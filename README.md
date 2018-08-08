@@ -36,7 +36,7 @@ The following is a list of open research problems that the Tendermint team is in
     * Currently Tendermint Core is the only consensus engine that matches the ABCI interface spec. Can we create implementations of other consensus protocols such as Casper CBC and HoneyBadger BFT to also fit the ABCI interface, so blockchain developers can choose which consensus engine to use for their application.
 * Creating ABCI interface for p2p layer
     * How the ABCI creates an abstraction between the blockchain application and the consensus layer, can we create a similar abstraction between the consensus and peer to peer layers.  This will allow blockchains to choose their preferred gossip protocol or networking stack.
-    * Look into [[libp2p](https://github.com/libp2p)]
+    * Look into [libp2p](https://github.com/libp2p)
 
     
 ### Cosmos SDK
