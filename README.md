@@ -145,6 +145,8 @@ The following is a list of open research problems that the Tendermint team is in
 * Techinques for maintatining uptime and DDOS Protection
 * "Smart HSMs" and Trusted hardware (SGX)
 
+### Merkle Trees
+* Sparse Merkle Trees w/ arbitrary key lengths (a "generalization" of SMT)
 
 ### Miscellaneuous
 * Cross-chain identity
