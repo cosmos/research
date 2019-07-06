@@ -29,7 +29,7 @@ However, if staking derivative are to be useful in DeFi, it would be desirable t
 
 Thus, the search for fungible staking derivatives was on.
 
-## A Toy Attempt
+## Delegation Vouchers
 
 At the Cosmos HackAtom Berlin, the [Sikka](https://www.sikka.tech/) and [Chorus One](https://chorus.one/) joint team implemented a mechanism called "delegation vouchers" outlined in [this blog post](https://blog.chorus.one/delegation-vouchers/).  Essentially they successfully create fungible delegation vouchers by removing the F1 fee pool altogether and autobonding all rewards.  However, this is done by adding the constraint that all rewards can only be in the staking token of a chain.  This may be reasonable for some chains, but one of the design goals of the Cosmos Hub is that fees can be [paid in a variety of tokens](https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf), not just Atoms.  This becomes even more of a concern when the Hub upgrades to do [interchain staking](https://github.com/cosmos/ics/issues/27) in which the validators could presumably be being rewards in the native token of another chain.
 
