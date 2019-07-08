@@ -1,12 +1,12 @@
 # Staking Derivatives
 
-At the inaugural Interchain Conversations, @zaki gave [a talk](http://kalpatech.co/Cosmos_Part_2_1.ogg) explaining the important of staking derivatives, and why #StakingIsDeFi.  Also, as exchange validators like [Poloniex introduce trading on staked atoms](https://medium.com/circle-trader/cosmos-staking-is-live-78879f1523b4) it will be necessary to allow derivatives to be created for staked atoms on any validator, not only custodial validators like Poloniex and Coinbase.
+At the inaugural Interchain Conversations, @zaki gave [a talk](http://kalpatech.co/Cosmos_Part_2_1.ogg) explaining the important of staking derivatives, and why #StakingIsDeFi.  Also, as exchange validators like [Poloniex introduce trading on staked atoms](https://medium.com/circle-trader/cosmos-staking-is-live-78879f1523b4) it is necessary to allow trustless derivatives to be created for staked atoms on any validator, not only custodial validators like Poloniex and Coinbase, in order to allow non-custodial validators to remain competitive.
 
 http://kalpatech.co/Cosmos_Part_2_1.ogg
 
 ## Assetizing Delegations
 
-In some of the early designs for staking derivatives that @zaki and I were designing, we started with the premise of turning the `Delegation` struct already existing in the gaia codebase into an asset that could be transferred.  However, these delegation assets would have to be non-fungible assets (NFAs) because of [the way that the F1 fee-distribution works](https://cosmos.network/docs/spec).  Because F1 needs to keep track of the last time each individual delegator withdrew, these delegation assets are not fungible.
+In some of the early designs for staking derivatives that @zaki and I were designing, we started with the premise of turning the `Delegation` struct already existing in the gaia codebase into an asset that could be transferred.  However, these delegation assets would have to be non-fungible assets (NFAs) because of [the way that the F1 fee-distribution works](https://cosmos.network/docs/spec/distribution/01_concepts.html).  Because F1 needs to keep track of the last time each individual delegator withdrew, these delegation assets are not fungible.
 
 We can imagine the delegation asset as follows with attributes and capabilities:
 ```
@@ -173,7 +173,7 @@ Now everything seems great...except two small problems.
 
 Both of these edge cases involve some funkiness that happens for brand new delegations to a validator.  Thus, the simple solution for resolving both these problems is to not allow a new delegation to issue derivatives until after it has been bonded for at least one unbonding period.
 
-With this design, DelShares from the same `Delegation` are truly fungible and `DelShare`s to the same validator from different `Delegations` are "pseudofungible".  And interesting next step challenge would be to design a system in the Cosmos SDK and other frameworks that allow pseudofungible assets to be treated the same (for example, we want to be able to put pseudo-fungible shares in the same Uniswap pool).  The design for such a system is out of scope for this spec, but some very preliminary discussion can be found [here](https://github.com/cosmos/cosmos-sdk/issues/1980).
+With this design, DelShares from the same `Delegation` are truly fungible and `DelShare`s to the same validator from different `Delegations` are "pseudofungible".  An interesting next step challenge would be to design a system in the Cosmos SDK and other frameworks that allow pseudofungible assets to be treated the same (for example, we want to be able to put pseudo-fungible shares in the same Uniswap pool).  The design for such a system is out of scope for this spec, but some very preliminary discussion can be found [here](https://github.com/cosmos/cosmos-sdk/issues/1980).
 
 
 ## Still Open Questions:
