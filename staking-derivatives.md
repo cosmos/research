@@ -1,6 +1,8 @@
 # Staking Derivatives
 
-At the inaugural Interchain Conversations, @zaki gave a talk explaining the important of staking derivatives, and why #StakingIsDeFi.  Also, as exchange validators like [Poloniex introduce trading on staked atoms](https://medium.com/circle-trader/cosmos-staking-is-live-78879f1523b4) it will be necessary to allow derivatives to be created for staked atoms on any validator, not only custodial validators like Poloniex and Coinbase.
+At the inaugural Interchain Conversations, @zaki gave [a talk](http://kalpatech.co/Cosmos_Part_2_1.ogg) explaining the important of staking derivatives, and why #StakingIsDeFi.  Also, as exchange validators like [Poloniex introduce trading on staked atoms](https://medium.com/circle-trader/cosmos-staking-is-live-78879f1523b4) it will be necessary to allow derivatives to be created for staked atoms on any validator, not only custodial validators like Poloniex and Coinbase.
+
+http://kalpatech.co/Cosmos_Part_2_1.ogg
 
 ## Assetizing Delegations
 
@@ -191,3 +193,7 @@ If a `DelegationShare` is transferred on another zone (where most DeFi applicati
 **Tax implications of Forced Withdraws**
 
 Because when you merge `Delegation` structs, it causes a forced withdraw of rewards earned thus far so that it can reset the `Last_Withdrawal_Time`.  This may have tax implications that should be accounted for.  How can we design tags that make it as easy as possible for delegators to take these into account?
+
+---
+
+Special thanks to the [Chorus One](https://chorus.one/) team with whom many discussions took place in the process of designing this spec.
