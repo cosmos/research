@@ -1,3 +1,5 @@
+> This repo is archived as of June 29, 2020 but made available for historical record
+
 # Cosmos and Tendermint Research
 
 The following is a list of open research problems that the Tendermint team is interested in exploring.  If you are interested in helping research or implement any of these ideas, please get in touch with us, and we'd be happy to setup a bounty to reward you for you contributions!
